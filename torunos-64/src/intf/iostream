@@ -1,0 +1,24 @@
+#pragma GCC system_header
+#ifndef IOSTREAM_HPP
+#define IOSTREAM_HPP
+#include <stdio.h>
+int atoi(const char* str);
+
+namespace std {
+    typedef unsigned int size_t;
+    class iostream {
+        public:
+            iostream &operator<<(char value);
+            iostream &operator<<(int value);
+            iostream &operator<<(const void *value);
+            iostream &operator<<(const char *value);
+
+            iostream &operator>>(char &value);
+            iostream &operator>>(int &value);   
+            iostream &operator>>(char *value);
+    };
+    extern const char endl;
+    extern iostream cin;
+    extern iostream cout;
+}
+#endif
